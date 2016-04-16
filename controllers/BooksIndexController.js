@@ -5,6 +5,7 @@ var endpoint = "https://super-crud.herokuapp.com/books";
 BooksIndexController.$inject=['$http'];
 function BooksIndexController( $http ) {
   var vm = this;
+  vm.newAlbum = {};
 
   $http({
     method: 'GET',
@@ -15,4 +16,14 @@ function BooksIndexController( $http ) {
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
+
+  vm.createBook = function () {
+    $http({
+      method: 'POST',
+      url: endpoint,
+      data: vm.newBook,
+    }).then(function successCallback(response) {
+     vm.books.push(response.data.books);//this is pending
+   });
+  };
 }
