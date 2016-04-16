@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
 
-      <form class="form-horizontal" ng-submit="booksIndexCtrl.createBook(book)">
+      <form class="form-horizontal" ng-submit="booksIndexCtrl.createBook()">
         <fieldset>
 
           <!-- Form Name -->
@@ -99,9 +99,7 @@
           <div class='panel-footer'>
             <div class='panel-footer'>
               <button class='btn btn-danger' ng-click="booksIndexCtrl.deleteBook(book)">Delete Book</button>
-              <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Book</button>
-              <button class='btn btn-success' ng-show="editing" ng-click="booksIndexCtrl.editBook(book); editing = false">Save Changes</button>
-
+              
             </div>
           </div>
         </div>

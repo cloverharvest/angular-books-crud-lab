@@ -11,20 +11,20 @@ function config (  $routeProvider,   $locationProvider  ) {
   $routeProvider
     .when('/', {
       templateUrl: '/templates/books/index.html',
-      controller:  'BooksIndexController', 
+      controller:  'BooksIndexController',
       controllerAs: 'booksIndexCtrl'
     })
     .when('/:id', {
       templateUrl: '/templates/books/show.html',
-      controllerAs: 'BooksShowController',
-      controller: 'booksShowCtrl'
+      controller: 'BooksShowController',
+      controllerAs: 'booksShowCtrl'
     })
-    .otherwise({
-        redirectTo: '/'
+    .otherwise ({
+      redirectTo: '/'
     });
 
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
-  });
+    });
 }

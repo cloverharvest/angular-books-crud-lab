@@ -7,7 +7,7 @@
 
 				<div class='row'>
 					<div class="col-md-3 col-xs-12 thumbnail">
-						<img ng-src="{{booksShowCtrl.books.image}}" alt="book image">
+						<img ng-src="{{booksShowCtrl.book.image}}" alt="book image">
 					</div>
 
 					<div class="col-md-9 col-xs-12">
@@ -15,7 +15,7 @@
 
 							<li class="list-group-item">
 								<h4 class='inline-header'>Book Title:</h4>
-								<span ng-hide="editing"><a ng-href="{{book._id}}">{{booksShowCtrl.book.title}}</a></span>
+								<span ng-hide="editing">{{booksShowCtrl.book.title}}</span>
 								<input ng-show="editing" ng-model="booksShowCtrl.book.title" type="text" class="form-control input-md">
 							</li>
 
@@ -28,7 +28,7 @@
 							<li class="list-group-item">
 								<h4 class='inline-header'>Date Published:</h4>
 								<span ng-hide="editing">{{booksShowCtrl.book.releaseDate}}</span>
-								<input ng-show="editing" ng-model="booksShowCtrlbook.releaseDate" type="text" class="form-control input-md">
+								<input ng-show="editing" ng-model="booksShowCtrl.book.releaseDate" type="text" class="form-control input-md">
 							</li>
 
 						</ul>
@@ -37,8 +37,8 @@
 
 				<div class='panel-footer'>
 					<div class='panel-footer'>
-						<button class='btn btn-danger' ng-click="booksShowCtrl.deleteBook(booksShowCtrl.book)">Delete Book</button>
+						<!-- <button class='btn btn-danger' ng-click="booksShowCtrl.deleteBook(booksShowCtrl.book)">Delete Book</button>
 						<button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Book</button>
-						<button class='btn btn-success' ng-show="editing" ng-click="booksShowCtrl.editBook(book); editing = false">Save Changes</button>
+						<button class='btn btn-success' ng-show="editing" ng-click="booksIndexCtrl.editBook(book); editing = false">Save Changes</button> -->
 
 </div>
