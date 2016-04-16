@@ -57,7 +57,7 @@
 <br>
 
 <label>Search Box</label>
-<input type="text" class="form-control" ng-model="searchText" placeholder="Search Albums">
+<input type="text" class="form-control" ng-model="searchText" placeholder="Search Books">
 
 <br>
   <div ng-repeat="book in booksIndexCtrl.books | orderBy: 'title' | filter: searchText" class="row" >

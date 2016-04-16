@@ -14,10 +14,9 @@ function BooksShowController($http, $routeParams, $location) {
     method: 'GET',
     url: endpoint + bookId,
   }).then(function successCallback(response) {
-    console.log("this is the book that was clicked: ", response.data);
     vm.book = response.data;
   }, function errorCallback(response) {
-    console.log('There was an error getting the data', error);
+    console.log('There was an error getting the data', response.data);
   });
 
   vm.deleteBook = function(book) {
@@ -28,7 +27,7 @@ function BooksShowController($http, $routeParams, $location) {
       console.log("the book to be deleted is: ", book._id);
       //on success, this deletes the book and returns the user to the home page
       $location.path('/');
-      //working already, do not touch but ux could be improved
+      //working already, but ux could be improved
     }, function errorBookDeleteError(response) {
       console.log('There was an error deleting the data', response.data);
     });
@@ -50,7 +49,7 @@ function BooksShowController($http, $routeParams, $location) {
 
       vm.book = response.data;
       $location.path('/');
-      //this is already working do not touch
+
     }, function onBookEditError(response) {
       console.log('There was an error editing the data', response);
     });
