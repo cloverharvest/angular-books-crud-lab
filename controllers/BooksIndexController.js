@@ -38,9 +38,10 @@ function BooksIndexController( $http ) {
       method: 'DELETE',
       url: 'https://super-crud.herokuapp.com/books/' + book._id,
     }).then(function successCallback(json) {
-      console.log("the book to be deleted is: ", book._id);
-      //function able to detect id, but will only get deleted on view after refresh
-
+      console.log("the book deleted is: ", book._id);
+      var index = vm.books.indexOf(book);
+      vm.books.splice(index,1);
+      //this is ok already do not touch! able to detect id, delete, refreshes on its own! : )
     }, function errorCallback(response) {
       console.log('There was an error deleting the data', response.data);
     });
