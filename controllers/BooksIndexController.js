@@ -27,7 +27,7 @@ function BooksIndexController( $http ) {
     }).then(function onBookPostSuccess(response) {
       console.log("the new book posted is: ", response.data);
       vm.books.push(response.data);
-       //this is working already do not touch! posts and refreshes! : )
+       //this is working already do not touch! posts and refreshes on its own! : )
     }, function onBookPostError(error) {
      console.log("There was an error in posting the book", response);
    });
@@ -38,7 +38,7 @@ function BooksIndexController( $http ) {
       method: 'DELETE',
       url: 'https://super-crud.herokuapp.com/books/' + book._id,
     }).then(function successCallback(json) {
-      console.log("deleted book: ", book._id);
+      console.log("the book to be deleted is: ", book._id);
       //function able to detect id, but will only get deleted on view after refresh
 
     }, function errorCallback(response) {
