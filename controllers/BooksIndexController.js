@@ -3,12 +3,14 @@ angular.module('libraryApp')
 
 var endpoint = "https://super-crud.herokuapp.com/books";
 
+// in charge of index.html template
 BooksIndexController.$inject=['$http'];
 
 function BooksIndexController( $http ) {
   var vm = this;
   vm.newBook = {};
 
+//gets all books
   $http({
     method: 'GET',
     url: endpoint,
@@ -18,6 +20,7 @@ function BooksIndexController( $http ) {
     console.log('There was an error getting the data', response);
   });
 
+  //creates a book
   vm.createBook = function () {
     $http({
       method: 'POST',
@@ -32,6 +35,7 @@ function BooksIndexController( $http ) {
    });
   };
 
+  //deletes a book
   vm.deleteBook = function(book) {
     $http({
       method: 'DELETE',

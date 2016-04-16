@@ -6,10 +6,12 @@ var endpoint = "https://super-crud.herokuapp.com/books/";
 
 BooksShowController.$inject=['$http', '$routeParams', '$location'];
 
+//in charge of show.html
 function BooksShowController($http, $routeParams, $location) {
   var vm = this;
   var bookId = $routeParams.id;
 
+  //gets all books
   $http({
     method: 'GET',
     url: endpoint + bookId,
@@ -19,6 +21,7 @@ function BooksShowController($http, $routeParams, $location) {
     console.log('There was an error getting the data', response.data);
   });
 
+  //deletes book in show.html
   vm.deleteBook = function(book) {
     $http({
       method: 'DELETE',
@@ -33,6 +36,7 @@ function BooksShowController($http, $routeParams, $location) {
     });
   };
 
+  //edits book in show.html
   vm.editBook = function (booktoEdit) {
     console.log("the book to be edited is: ", booktoEdit);
     $http({
