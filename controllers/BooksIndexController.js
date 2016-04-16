@@ -5,7 +5,7 @@ var endpoint = "https://super-crud.herokuapp.com/books";
 BooksIndexController.$inject=['$http'];
 function BooksIndexController( $http ) {
   var vm = this;
-  vm.newAlbum = {};
+  vm.newBook = {};
 
   $http({
     method: 'GET',
@@ -23,7 +23,18 @@ function BooksIndexController( $http ) {
       url: endpoint,
       data: vm.newBook,
     }).then(function successCallback(response) {
-     vm.books.push(response.data.books);//this is pending
+     vm.books.push(response.data.books); //this is working but needs to be manually refreshed
    });
+
+  //  vm.deleteBook = function(book) {
+  //   $http({
+  //     method: 'DELETE',
+  //     url: endpoint + "/" + book._id,
+  //   }).then(function successCallback(json) {
+  //     console.log("deleted book");
+  //   }, function errorCallback(response) {
+  //     console.log('There was an error deleting the data', response);
+  //   });
+  // };
   };
 }
